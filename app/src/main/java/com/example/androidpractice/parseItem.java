@@ -1,6 +1,6 @@
 package com.example.androidpractice;
 
-public class parseItem {
+/*public class parseItem {
 
     private String imgUrl;
     private String title;
@@ -40,3 +40,5 @@ public class parseItem {
     }
 }
 }
+
+ */

@@ -17,7 +17,7 @@ import org.xml.sax.helpers.ParserAdapter;
 
 import java.util.ArrayList;
 
-public class Adapter extends RecyclerView.Adapter<ParserAdapter.ViewHolder> {
+/*public class Adapter extends RecyclerView.Adapter<ParserAdapter.ViewHolder> {
 
     private ArrayList<parseItem> parseItems;
     private Context context;
@@ -74,3 +74,5 @@ public class Adapter extends RecyclerView.Adapter<ParserAdapter.ViewHolder> {
         return parseItems.size();
     }
 }
+*
+ */
