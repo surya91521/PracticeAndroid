@@ -22,7 +22,6 @@
 
         <activity android:name=".maps"></activity>
         <activity android:name=".sqlite.sqlite" />
-        <activity android:name=".jsoup" />
         <activity android:name=".List">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
