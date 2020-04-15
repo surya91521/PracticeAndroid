@@ -1,4 +1,4 @@
-package com.example.androidpractice;
+package com.example.androidpractice.sqlite;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.example.androidpractice.R;
 
 public class sqlite extends AppCompatActivity {
 

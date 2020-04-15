@@ -6,7 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
+
+import com.example.androidpractice.sqlite.sqlite;
 
 public class List extends AppCompatActivity {
 
@@ -30,10 +31,20 @@ public class List extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(List.this,sqlite.class);
+                Intent intent = new Intent(List.this, sqlite.class);
                 startActivity(intent);
             }
         });
+
+        Button button3 = (Button)findViewById(R.id.maps);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(List.this,maps.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }
