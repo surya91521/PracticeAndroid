@@ -46,5 +46,16 @@ public class List extends AppCompatActivity {
         });
 
 
+        Button button4 = (Button)findViewById(R.id.jsoup);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(List.this,jsoup.class);
+                startActivity(intent);
+            }
+        });
+
+
+
     }
 }
