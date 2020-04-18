@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".gson">
 
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/darker_gray" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
