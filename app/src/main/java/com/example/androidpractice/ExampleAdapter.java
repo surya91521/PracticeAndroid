@@ -28,22 +28,6 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
 
 
 
-    public class ExampleViewHolder extends  RecyclerView.ViewHolder{
-
-        public ImageView mImageView;
-        public TextView mTextViewCreator;
-        public TextView mTextViewLikes;
-
-        public ExampleViewHolder(@NonNull View itemView) {
-            super(itemView);
-
-            mImageView = itemView.findViewById(R.id.imageView);
-            mTextViewCreator = itemView.findViewById(R.id.text_view_creator);
-            mTextViewLikes=itemView.findViewById(R.id.text_view_likes);
-
-        }
-    }
-
 
     @NonNull
     @Override
@@ -61,7 +45,7 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
         int likeCount = currentItem.getLikeCount();
 
         holder.mTextViewCreator.setText(creatorName);
-        holder.mTextViewLikes.setText("Likes : "+likeCount);
+        holder.mTextViewLikes.setText("Likes : "+ String.valueOf(likeCount));
         Picasso.get().load(imageUrl).fit().centerInside().into(holder.mImageView);
 
 
@@ -74,4 +58,22 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
     {
        return  mExampleList.size();
     }
+
+    public class ExampleViewHolder extends  RecyclerView.ViewHolder{
+
+        public ImageView mImageView;
+        public TextView mTextViewCreator;
+        public TextView mTextViewLikes;
+
+        public ExampleViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            mImageView = itemView.findViewById(R.id.imageView);
+            mTextViewCreator = itemView.findViewById(R.id.text_view_creator);
+            mTextViewLikes=itemView.findViewById(R.id.text_view_likes);
+
+        }
+    }
+
+
 }

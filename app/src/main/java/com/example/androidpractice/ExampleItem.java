@@ -6,6 +6,11 @@ public class ExampleItem {
      String mCreator;
      int mLikes;
 
+     public ExampleItem()
+     {
+
+     }
+
     public ExampleItem(String imageUrl , String creator , int likes)
     {
        this.mImageUrl=imageUrl;

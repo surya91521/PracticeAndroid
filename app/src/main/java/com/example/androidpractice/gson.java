@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -38,16 +39,19 @@ public class gson extends AppCompatActivity {
          mExampleList = new ArrayList<>();
 
          mRequestQueue = Volley.newRequestQueue(this);
-         parseJson();
+
 
         mExampleAdapter = new ExampleAdapter(gson.this,mExampleList);
         mRecyclerView.setAdapter(mExampleAdapter);
+
+        parseJson();
 
 
     }
 
     private void parseJson() {
-        String url ="https://pixabay.com/api/?key=16109116-b7cbd34642076b463cbf74508&q=kitten&imag_type=photo&pretty=true";
+        String url ="https://api.spoonacular.com/recipes/search?query=cheese&number=10&apiKey=ee489750f6d44bcfa4de0808433058ec";
+
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
@@ -55,18 +59,26 @@ public class gson extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
 
                         try {
-                            JSONArray jsonArray = response.getJSONArray("hits");
+                            JSONArray jsonArray = response.getJSONArray("results");
                             for(int i=0;i<jsonArray.length();i++)
                             {
+
                                 JSONObject hit = jsonArray.getJSONObject(i);
 
-                                String creatorName = hit.getString("user");
-                                String imageUrl = hit.getString("webformatURL");
-                                int likeCount = hit.getInt("likes");
+                                ExampleItem exampleItem = new ExampleItem();
 
-                                mExampleList.add(new ExampleItem(imageUrl,creatorName,likeCount));
+                                 exampleItem.setCreator(hit.getString("title"));
+                                 exampleItem .setImageUrl(hit.getString("image"));
+                                exampleItem.setLikeCount(hit.getInt("servings"));
+
+
+                                mExampleList.add(exampleItem);
+
+                                Log.d("Values",mExampleList.toString());
                             }
 
+                          Log.d("Creator name:",mExampleList.toString());
+                            mExampleAdapter.notifyDataSetChanged();
 
                         } catch (JSONException e) {
                             e.printStackTrace();
