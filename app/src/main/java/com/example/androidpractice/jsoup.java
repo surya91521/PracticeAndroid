@@ -6,6 +6,7 @@ import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.DocumentsContract;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -26,7 +27,7 @@ public class jsoup extends AppCompatActivity {
     TextView textView;
     Button button;
 
-    String url ="https://www.canva.com/photos/free/";
+    String url ="https://animefrenzy.net/";
     String title,link,src;
     ProgressDialog progressDialog;
 
@@ -43,6 +44,9 @@ public class jsoup extends AppCompatActivity {
         textView = (TextView)findViewById(R.id.title);
         button = (Button)findViewById(R.id.fetch);
 
+        imageView1 = (ImageView)findViewById(R.id.imageView);
+        imageView2 = (ImageView)findViewById(R.id.imageView2);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,8 +56,7 @@ public class jsoup extends AppCompatActivity {
             }
         });
 
-        imageView1 = (ImageView)findViewById(R.id.imageView);
-        imageView2 = (ImageView)findViewById(R.id.imageView2);
+
     }
 
 
@@ -85,15 +88,17 @@ public class jsoup extends AppCompatActivity {
             try {
                 Document doc = Jsoup.connect(url).get();
                 title=doc.title();            //gives the title of page
-              //  Elements links = doc.select("a[href]");  (Gives the title of all strings in page)
-               // link = links.text().toString();
+               // Elements links = doc.select("a[href]");  (Gives the title of all strings in page)
+                //link = links.text().toString();
 
                 Elements img = doc.getElementsByTag("img");
-                for(Element e1: img){
+                for(Element el: img){
 
-                    src = e1.absUrl("src");
+                    src=el.absUrl("src");
                     list.add(src);
-                }
+               }
+
+                Log.d("imageLinks : ",list.toString());
 
 
             } catch (IOException e) {

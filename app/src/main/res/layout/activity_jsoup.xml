@@ -31,25 +31,21 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="263dp"
+        android:layout_width="match_parent"
         android:layout_height="230dp"
-        android:layout_marginStart="75dp"
+        android:scaleType="fitXY"
         android:layout_marginTop="13dp"
-        android:layout_marginEnd="74dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fetch" />
+        app:layout_constraintTop_toBottomOf="@+id/fetch"
+        tools:layout_editor_absoluteX="75dp" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="196dp"
+        android:layout_width="match_parent"
         android:layout_height="194dp"
-        android:layout_marginStart="94dp"
-        android:layout_marginEnd="121dp"
+        android:scaleType="fitXY"
         android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toTopOf="@+id/title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:layout_editor_absoluteX="94dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

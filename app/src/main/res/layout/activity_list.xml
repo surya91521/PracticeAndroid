@@ -43,6 +43,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Jsoup" />
+
+
+            <Button
+                android:id="@+id/json"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Json" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

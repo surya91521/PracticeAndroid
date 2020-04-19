@@ -55,6 +55,15 @@ public class List extends AppCompatActivity {
             }
         });
 
+        Button button5 = (Button)findViewById(R.id.json);
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(List.this,gson.class);
+                startActivity(intent);
+            }
+        });
+
 
 
     }
